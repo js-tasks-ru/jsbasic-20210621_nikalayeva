@@ -1,8 +1,6 @@
 function showSalary(users, age) {
-  let strAllSalaries = "";
-  for (let user of users) {
-    ( user["age"] <= age ) ? strAllSalaries += user["name"] + ", " + user["balance"] + "\n" : false;
-  }
-  return strAllSalaries.slice(0, -1);
+  let usersFiltered = users.filter(user => user.age <= age);
+  let newArr = usersFiltered.map(user => user.name + ", " + user.balance + "\n");
+  return newArr.join("").slice(0, -1);
 }
 
