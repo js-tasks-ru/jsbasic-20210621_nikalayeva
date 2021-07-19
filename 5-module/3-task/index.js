@@ -10,7 +10,7 @@ function initCarousel() {
 
   buttonRight.onclick = function () {
     slideNumber += 1;
-    container.style.transform = `translateX(${shift = (-988 * (slideNumber))}px)`;
+    container.style.transform = `translateX(${shift = (-container.offsetWidth * (slideNumber))}px)`;
     if (slideNumber == slides.length - 1 ) {
       buttonRight.style.display = 'none';
       buttonLeft.style.display = '';
@@ -21,7 +21,7 @@ function initCarousel() {
   };
 
   buttonLeft.onclick = function () {
-    container.style.transform = `translateX(${shift += 988}px)`;
+    container.style.transform = `translateX(${shift += container.offsetWidth}px)`;
     slideNumber -= 1;
     if (slideNumber == 0) {
       buttonLeft.style.display = 'none';
