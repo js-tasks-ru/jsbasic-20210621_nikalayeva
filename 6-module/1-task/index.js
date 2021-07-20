@@ -14,9 +14,7 @@
  */
 export default class UserTable {
   constructor(rows) {
-<<<<<<< HEAD
-    
-=======
+
     this.elem = document.createElement('table');
 
     this.elem.innerHTML = `
@@ -53,7 +51,7 @@ export default class UserTable {
     `; // оборачиваем полученные строчки в tbody
 
     this.elem.addEventListener('click', (event) => this.onClick(event));
->>>>>>> 784a5b8b7878f16b17f834ad924e59a6667a8032
+
   }
 
   onClick(event) {
