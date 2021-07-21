@@ -26,15 +26,16 @@ export default class ProductCard {
 
     `;
 
-    let button = document.querySelector('.card__button');
-
-    let event = new CustomEvent("product-add", {
-      detail: this.product.id,
-      bubbles: true
-    });
-
-    button.dispatchEvent(event);
 
   }
 
+  let event = new CustomEvent("product-add", {detail: this.product.id, bubbles: true});
+    let cardButton = document.querySelector('.card__button');
+
+    cardButton.addEventListener("product-add", event);
+
 }
+
+
+
+
