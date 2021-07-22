@@ -1,5 +1,5 @@
 import createElement from '../../assets/lib/create-element.js';
-
+console.log(createElement());
 export default class ProductCard {
   constructor(product) {
 
@@ -9,10 +9,10 @@ export default class ProductCard {
     this.image = product['image'];
     this.id = product['id'];
 
-    this.elem = document.createElement('div');
-    this.elem.classList.add("card");
-    this.elem.innerHTML = `
 
+
+    let cardElement = `
+    <div class="card">
           <div class="card__top">
               <img src='/assets/images/products/${this.image}' class="card__image" alt="product">
               <span class="card__price">€${this.price.toFixed(2)}</span>
@@ -23,19 +23,10 @@ export default class ProductCard {
                   <img src="/assets/images/icons/plus-icon.svg" alt="icon">
               </button>
           </div>
-
+          </div>
     `;
 
+    this.elem = createElement(cardElement);
 
   }
-
-  let event = new CustomEvent("product-add", {detail: this.product.id, bubbles: true});
-    let cardButton = document.querySelector('.card__button');
-
-    cardButton.addEventListener("product-add", event);
-
 }
-
-
-
-
